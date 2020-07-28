@@ -9,6 +9,17 @@ import scrapy
 
 
 class JdReviewMineItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    sku = scrapy.Field()
+    price = scrapy.Field()
+    title = scrapy.Field()
+    id = scrapy.Field()
+    content = scrapy.Field()
+    score = scrapy.Field()
+    plus = scrapy.Field()
+    nickname = scrapy.Field()
+    creationTime = scrapy.Field()
+
+
+
+
+

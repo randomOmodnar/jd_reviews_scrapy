@@ -14,6 +14,12 @@ class RandomUserAgentMiddleware(object):
         if ua:
             request.headers.setdefault('User-Agent', ua)
 
+        # php接口请求头需要reference
+        if 'php' in request.url:
+            reference = request.meta['reference']
+            request.headers.setdefault('referer', reference)
+
+
 
 class JdReviewMineSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
