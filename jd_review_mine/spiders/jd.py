@@ -42,6 +42,7 @@ class JdSpider(scrapy.Spider):
 
     def comment_parse(self,response):
         item = JdReviewMineItem()
+        if not response.text: return None #跳过空返回内容
         comment_json = json.loads(response.text[20:-2])
         comments = comment_json['comments']
         params = response.meta
